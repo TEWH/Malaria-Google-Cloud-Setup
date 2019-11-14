@@ -12,34 +12,13 @@
 ### Start Preemptible VM Instance
 
 - Reference: https://cloud.google.com/preemptible-vms
-- `gcloud compute instances create tewh-malaria --image-project=ml-images --image-family=tf-1-15 --zone us-central1-c --scopes=cloud-platform --preemptible`
+- `gcloud compute instances create tewh-malaria --machine-type=n1-standard-2 --accelerator type=nvidia-tesla-v100,count=1 --image-project=ml-images --image-family=tf-1-15 --zone=us-central1-a --maintenance-policy=TERMINATE`
 
-
-### Start Preemptible TPU
-
-- Reference: https://cloud.google.com/tpu/docs/preemptible
-- `gcloud compute tpus create tewh-malaria --zone=us-central1-c --network=default --accelerator-type=v2-8 --range=192.168.0.0 --version=1.15 --preemptible`
-- `ctpu up --tpu-only --name=tewh-malaria --zone=us-central1-c --preemptible`
-
-
-### Start VM + TPU Together
-
-- `ctpu up --name=tewh-malaria --zone=us-central1-c --tpu-size=v2-8 --machine-type=n1-standard-1 --disk-size-gb=25 --preemptible`
-
-
-### Link TPU with VM
-
-- Reference: https://cloud.google.com/tpu/docs/creating-deleting-tpus
-- `gcloud compute ssh tewh-malaria --zone=us-central1-c`
-- `export TPU_NAME=tewh-malaria`
-- `exit`
-- Confirm with `ctpu status` that the instances are RUNNING
 
 ### Remember to delete VM + TPU after training to save on costs!
 
 - Reference: https://cloud.google.com/tpu/docs/creating-deleting-tpus
-- `gcloud compute instances delete tewh-malaria --zone=us-central1-c`
-- `gcloud compute tpus delete tewh-malaria --zone=us-central1-c`
+- `gcloud compute instances delete tewh-malaria --zone=us-central1-a`
 
 
 ## Jupyter Notebook Installation
@@ -47,7 +26,7 @@
 
 ### SSH into the VM
 
-- `gcloud compute ssh tewh-malaria --zone=us-central1-c`
+- `gcloud compute ssh tewh-malaria --zone=us-central1-a`
 
 
 ### Clone the Repository

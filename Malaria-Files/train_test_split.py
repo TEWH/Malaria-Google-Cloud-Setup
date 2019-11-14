@@ -80,3 +80,5 @@ while len(uninfected_images) > 0:
 
     copyfile(cell_image_dir, renamed_dir)
     uninfected_images.remove(cell_image)
+
+print("Done!")
