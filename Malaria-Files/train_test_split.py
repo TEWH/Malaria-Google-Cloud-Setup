@@ -34,8 +34,8 @@ target_parasitized_train_size = int(len(parasitized_images) * train_test_ratio)
 target_parasitized_test_size = len(parasitized_images) - target_parasitized_train_size
 target_uninfected_train_size = int(len(uninfected_images) * train_test_ratio)
 target_uninfected_test_size = len(uninfected_images) - target_uninfected_train_size
-target_test_size = target_parasitized_test_size + target_uninfected_test_size
 target_train_size = target_parasitized_train_size + target_uninfected_train_size
+target_test_size = target_parasitized_test_size + target_uninfected_test_size
 
 # Randomly move 20% of parisitized images to testing set
 print("Copying parisitized images to testing set...")
