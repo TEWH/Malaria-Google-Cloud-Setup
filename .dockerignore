@@ -1,0 +1,7 @@
+.dockerignore
+.ipynb_checkpoints/
+cell_images/
+docker-compose.yml
+Dockerfile
+Malaria_Dataset/
+README.md

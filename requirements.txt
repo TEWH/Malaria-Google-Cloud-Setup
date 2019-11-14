@@ -1,0 +1,4 @@
+jupyterlab
+keras
+pillow
+matplotlib

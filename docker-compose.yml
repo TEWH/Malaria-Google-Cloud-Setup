@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  jupyter:
+    build: .
+    ports:
+      - "80:8888"
+    volumes:
+      - type: bind
+        source: /srv/jupyter
+        target: /srv/jupyter
+volumes:
+  jupyter:
