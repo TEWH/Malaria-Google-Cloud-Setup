@@ -1,6 +1,8 @@
 # TEWH-Malaria-Google-Cloud-Setup
 
+
 ## Google Cloud Configuration
+
 
 ### Initial Steps
 
@@ -9,39 +11,73 @@
 - Navigate to Compute Engine -> [VM instances](https://console.cloud.google.com/compute/instances) in the left sidebar
 
 
-### Start Preemptible VM Instance
-
-- Reference: https://cloud.google.com/preemptible-vms
-- `gcloud compute instances create tewh-malaria --machine-type=n1-standard-2 --accelerator type=nvidia-tesla-v100,count=1 --image-project=ml-images --image-family=tf-1-15 --zone=us-central1-a --maintenance-policy=TERMINATE`
-
-
-### Remember to delete VM + TPU after training to save on costs!
-
-- Reference: https://cloud.google.com/tpu/docs/creating-deleting-tpus
-- `gcloud compute instances delete tewh-malaria --zone=us-central1-a`
-
-
-## Jupyter Notebook Installation
+## Jupyter Notebook Configuration
 
 
 ### SSH into the VM
 
-- `gcloud compute ssh tewh-malaria --zone=us-central1-a`
+- Click on "SSH" next to your instance in the Google Cloud Console
 
 
-### Clone the Repository
+### Install Dependencies
+
+
+#### Git
+
+- `sudo apt install git`
+
+
+#### Docker
+
+- `curl -fsSL https://get.docker.com | sh` to run the install script
+- `sudo usermod -a -G docker $USER`
+
+
+#### Docker Compose
+
+- `sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
+- `sudo chmod +x /usr/local/bin/docker-compose`
+
+
+### Allow Write Permissions to /srv Directory
+
+- `sudo chmod -R a+w /srv`
+
+
+### Clone the Repository as /srv/jupyter/
 
 - `cd /srv`
-- `git clone [???] jupyter`
+- `git clone https://github.com/TEWH/Malaria-Google-Cloud-Setup.git jupyter`
 
 
-### Install Docker
-
-- docker
-- docker-compose
+## Start Jupyter Notebook
 
 
-### Start the Container
+### Start the Docker Container
 
 - `cd /srv/jupyter`
+- `docker-compose up`
+
+
+## Stop Jupyter Notebook
+
+
+### Stop the Docker Container
+
+- `cd /srv/jupter`
+- `docker-compose down`
+
+
+## Pull Updates from GitHub Repository
+
+
+### Pull the Repository
+
+- `cd /srv/jupter`
+- `git pull`
+
+
+### Rebuild the Docker Image
+
+- `docker-compose build`
 - `docker-compose up`
