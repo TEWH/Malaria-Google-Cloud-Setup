@@ -2,6 +2,7 @@ version: "3.7"
 services:
   jupyter:
     build: .
+    runtime: nvidia
     ports:
       - "80:8888"
     volumes:
