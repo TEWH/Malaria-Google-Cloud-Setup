@@ -48,7 +48,7 @@ os.makedirs(TRAIN_PARASITIZED_DIR, exist_ok=True)
 while len(parasitized_images) > 0:
     cell_image = random.choice(parasitized_images)
     cell_image_dir = os.path.join(PARASITIZED_DIR, cell_image)
-    renamed_dir = os.path.join(TRAINING_SET_DIR, "Parasitized", cell_image)
+    renamed_dir = os.path.join(TRAIN_PARASITIZED_DIR, cell_image)
 
     copyfile(cell_image_dir, renamed_dir)
     parasitized_images.remove(cell_image)
@@ -60,7 +60,7 @@ os.makedirs(TEST_UNINFECTED_DIR, exist_ok=True)
 while len(uninfected_images) > target_uninfected_train_size:
     cell_image = random.choice(uninfected_images)
     cell_image_dir = os.path.join(UNINFECTED_DIR, cell_image)
-    renamed_dir = os.path.join(TESTING_SET_DIR, "Uninfected", cell_image)
+    renamed_dir = os.path.join(TEST_UNINFECTED_DIR, cell_image)
 
     copyfile(cell_image_dir, renamed_dir)
     uninfected_images.remove(cell_image)
@@ -72,7 +72,7 @@ os.makedirs(TRAIN_UNINFECTED_DIR, exist_ok=True)
 while len(uninfected_images) > 0:
     cell_image = random.choice(uninfected_images)
     cell_image_dir = os.path.join(UNINFECTED_DIR, cell_image)
-    renamed_dir = os.path.join(TRAINING_SET_DIR, "Uninfected", cell_image)
+    renamed_dir = os.path.join(TRAIN_UNINFECTED_DIR, cell_image)
 
     copyfile(cell_image_dir, renamed_dir)
     uninfected_images.remove(cell_image)
