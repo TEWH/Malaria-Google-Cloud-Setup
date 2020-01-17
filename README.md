@@ -133,6 +133,12 @@ Reference: https://github.com/NVIDIA/nvidia-docker
 | n1-standard-4 |           2           |     64     |           ~147          |
 | n1-standard-4 |           2           |     128    |           ~292          |
 | n1-standard-4 |           2           |     256    |           ~588          |
+| n1-standard-8 |           2           |     10     |           ~17           |
+| n1-standard-8 |           2           |     16     |           ~24           |
+| n1-standard-8 |           2           |     32     |           ~47           |
+| n1-standard-8 |           2           |     64     |           ~95           |
+| n1-standard-8 |           2           |     128    |           ~190          |
+| n1-standard-8 |           2           |     256    |           ~385          |
 |  n1-highmem-4 |           2           |     10     |           ~20           |
 |  n1-highmem-4 |           2           |     16     |           ~28           |
 |  n1-highmem-4 |           2           |     32     |           ~52           |
