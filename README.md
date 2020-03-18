@@ -78,7 +78,7 @@ Reference: https://github.com/NVIDIA/nvidia-docker
 
 ### Clone the Repository as /srv/jupyter/
 - `cd /srv`
-- `git clone https://github.com/TEWH/Malaria-Google-Cloud-Setup.git jupyter`
+- `git clone https://github.com/TEWH/Malaria-Google-Cloud-Setup.git`
 
 
 ## Start Jupyter Notebook
