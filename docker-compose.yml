@@ -7,7 +7,7 @@ services:
       - "80:8888"
     volumes:
       - type: bind
-        source: /srv/jupyter
-        target: /srv/jupyter
+        source: /srv/Malaria-Google-Cloud-Setup
+        target: /srv/Malaria-Google-Cloud-Setup
 volumes:
   jupyter:

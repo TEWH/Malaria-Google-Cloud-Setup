@@ -1,4 +1,7 @@
+contextlib2
+Cython
 jupyterlab
 keras
 pillow
+pycocotools
 matplotlib
