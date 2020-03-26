@@ -76,7 +76,7 @@ Reference: https://github.com/NVIDIA/nvidia-docker
 ### Allow Write Permissions to /srv Directory
 - `sudo chmod -R a+w /srv`
 
-### Clone the Repository as /srv/jupyter/
+### Clone the Repository as /srv/Malaria-Google-Cloud-Setup/
 - `cd /srv`
 - `git clone https://github.com/TEWH/Malaria-Google-Cloud-Setup.git`
 
@@ -84,7 +84,7 @@ Reference: https://github.com/NVIDIA/nvidia-docker
 ## Start Jupyter Notebook
 
 ### Start the Docker Container
-- `cd /srv/jupyter`
+- `cd /srv/Malaria-Google-Cloud-Setup/`
 - `docker-compose up`
 
 
