@@ -3,4 +3,5 @@ Cython
 keras
 pillow
 matplotlib
+scikit-image
 
