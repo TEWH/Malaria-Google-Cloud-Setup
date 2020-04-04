@@ -209,8 +209,9 @@ def draw_bounding_box_on_image(image,
         # font = ImageFont.truetype('arial.ttf', 24)
 
         # Increase font size from default
-        font = ImageFont.truetype(
-            '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf', 36)
+        font_path = '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf'
+        font_size = 48
+        font = ImageFont.truetype(font_path, font_size)
     except IOError:
         font = ImageFont.load_default()
 
@@ -878,7 +879,8 @@ def visualize_boxes_and_labels_on_image_array(
             xmin,
             ymax,
             xmax,
-            color=color,
+            # color=color,
+            color=(191, 87, 0), # Burnt orange
             thickness=line_thickness,
             display_str_list=box_to_display_str_map[box],
             use_normalized_coordinates=use_normalized_coordinates)
