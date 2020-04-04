@@ -206,7 +206,11 @@ def draw_bounding_box_on_image(image,
     draw.line([(left, top), (left, bottom), (right, bottom),
                (right, top), (left, top)], width=thickness, fill=color)
     try:
-        font = ImageFont.truetype('arial.ttf', 24)
+        # font = ImageFont.truetype('arial.ttf', 24)
+
+        # Increase font size from default
+        font = ImageFont.truetype(
+            '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf', 36)
     except IOError:
         font = ImageFont.load_default()
 
@@ -847,13 +851,13 @@ def visualize_boxes_and_labels_on_image_array(
         ymin, xmin, ymax, xmax = box
 
         # Add coordinates to bounding box
-        im_width, im_height, im_depth = image.shape
-        min_row = int(ymin * im_height)
-        min_col = int(xmin * im_width)
-        max_row = int(ymax * im_height)
-        max_col = int(xmax * im_width)
+        # im_width, im_height, im_depth = image.shape
+        # min_row = int(ymin * im_height)
+        # min_col = int(xmin * im_width)
+        # max_row = int(ymax * im_height)
+        # max_col = int(xmax * im_width)
 
-        box_to_display_str_map[box].append(f'min: ({min_col}, {min_row}) | max: ({max_col}, {max_row})')
+        # box_to_display_str_map[box].append(f'min: ({min_col}, {min_row}) | max: ({max_col}, {max_row})')
 
         if instance_masks is not None:
             draw_mask_on_image_array(
